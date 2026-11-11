@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin | Snaker</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/admin/admin.css">
+  <script src="/js/theme.js"></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="/admin/">
+        <svg class="brand__mark" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 7.5c-3-2.6-11-2-11 4.5s10 3.5 10 9.5-8 7.5-12 4.5"/>
+          <circle cx="23.5" cy="8" r="1.5" fill="currentColor" stroke="none"/>
+        </svg>
+        <span>Snaker admin</span>
+      </a>
+      <div class="nav__actions">
+        <a class="btn btn--ghost btn--sm" href="/" target="_blank" rel="noopener">View site</a>
+        <button class="btn btn--sm" id="logout" type="button" hidden>Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap admin">
+    <!-- Login -->
+    <section class="panel login" id="login" hidden>
+      <h1>Log in</h1>
+      <p class="muted">Enter your admin password to manage your portfolio.</p>
+      <form id="loginForm" class="form">
+        <div class="field">
+          <label for="pw">Password</label>
+          <input id="pw" type="password" autocomplete="current-password" required>
+        </div>
+        <div><button class="btn" type="submit">Log in</button></div>
+        <p class="form__status" id="loginErr" role="alert" data-state="err"></p>
+      </form>
+    </section>
+
+    <!-- App -->
+    <div id="app" hidden>
+      <div class="tabs" role="tablist" aria-label="Admin sections">
+        <button class="tab" role="tab" type="button" data-tab="projects" aria-selected="true">Projects</button>
+        <button class="tab" role="tab" type="button" data-tab="messages" aria-selected="false">Messages <span class="tab__n" id="msgCount"></span></button>
+        <button class="tab" role="tab" type="button" data-tab="profile" aria-selected="false">Profile</button>
+      </div>
+
+      <!-- Projects -->
+      <section id="tab-projects" role="tabpanel">
+        <form class="panel form" id="projectForm" novalidate>
+          <h2 id="formTitle">Add a project</h2>
+          <div class="grid2">
+            <div class="field">
+              <label for="pTitle">Title</label>
+              <input id="pTitle" maxlength="120" required>
+            </div>
+            <div class="field">
+              <label for="pCategory">Type</label>
+              <select id="pCategory">
+                <option value="video">Video editing</option>
+                <option value="motion">Motion graphics</option>
+                <option value="design">Graphic design</option>
+                <option value="branding">Branding</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="pYear">Year</label>
+              <input id="pYear" type="number" min="1990" max="2100">
+            </div>
+            <div class="field">
+              <label for="pTags">Tags (separate with commas)</label>
+              <input id="pTags" placeholder="Color grading, Sound design">
+            </div>
+          </div>
+          <div class="field">
+            <label for="pDesc">Description</label>
+            <textarea id="pDesc" maxlength="2000" placeholder="What was the brief, and what did you do?"></textarea>
+          </div>
+
+          <div class="grid2">
+            <div class="field">
+              <label for="pCoverFile">Cover image (JPG, PNG, WebP)</label>
+              <input id="pCoverFile" type="file" accept="image/jpeg,image/png,image/webp,image/gif">
+              <div class="media-info" id="pCoverInfo"></div>
+              <button class="link-btn" id="pCoverClear" type="button" hidden>Remove cover</button>
+            </div>
+            <div class="field">
+              <label for="pVideoFile">Video file (MP4 or WebM, up to 500 MB)</label>
+              <input id="pVideoFile" type="file" accept="video/mp4,video/webm,video/quicktime">
+              <div class="media-info" id="pVideoInfo"></div>
+              <button class="link-btn" id="pVideoClear" type="button" hidden>Remove video</button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="pEmbed">Or paste a YouTube / Vimeo link</label>
+            <input id="pEmbed" type="url" placeholder="https://www.youtube.com/watch?v=...">
+          </div>
+
+          <progress id="pProgress" max="1" value="0" hidden></progress>
+          <div class="actions">
+            <button class="btn" id="pSave" type="submit">Add project</button>
+            <button class="btn btn--ghost" id="pCancel" type="button" hidden>Cancel editing</button>
+          </div>
+          <p class="form__status" id="pStatus" role="status"></p>
+        </form>
+
+        <h2 class="list-title">Your projects</h2>
+        <div class="list" id="projectList"></div>
+      </section>
+
+      <!-- Messages -->
+      <section id="tab-messages" role="tabpanel" hidden>
+        <h2 class="list-title">Messages from the contact form</h2>
+        <div class="list" id="messageList"></div>
+      </section>
+
+      <!-- Profile -->
+      <section id="tab-profile" role="tabpanel" hidden>
+        <form class="panel form" id="profileForm" novalidate>
+          <h2>Profile and site text</h2>
+          <div class="grid2">
+            <div class="field">
+              <label for="fName">Name</label>
+              <input id="fName" maxlength="40">
+            </div>
+            <div class="field">
+              <label for="fAvail">Availability line</label>
+              <input id="fAvail" maxlength="60" placeholder="Available for new projects">
+            </div>
+          </div>
+          <div class="field">
+            <label for="fHeadline">Headline</label>
+            <input id="fHeadline" maxlength="120">
+          </div>
+          <div class="field">
+            <label for="fSub">Short intro under the headline</label>
+            <textarea id="fSub" maxlength="240" rows="2"></textarea>
+          </div>
+          <div class="field">
+            <label for="fAbout">About (leave a blank line between paragraphs)</label>
+            <textarea id="fAbout" maxlength="3000" rows="7"></textarea>
+          </div>
+          <div class="grid2">
+            <div class="field">
+              <label for="fEmail">Public email</label>
+              <input id="fEmail" type="email" maxlength="120">
+            </div>
+            <div class="field">
+              <label for="fLocation">Location</label>
+              <input id="fLocation" maxlength="60">
+            </div>
+          </div>
+          <div class="field">
+            <label for="fTools">Tools (separate with commas)</label>
+            <input id="fTools">
+          </div>
+          <div class="field">
+            <label for="fSocials">Social links (one per line: Name | https://link)</label>
+            <textarea id="fSocials" rows="4" placeholder="Instagram | https://instagram.com/yourname&#10;Behance | https://behance.net/yourname"></textarea>
+          </div>
+          <div class="actions"><button class="btn" type="submit">Save profile</button></div>
+          <p class="form__status" id="fStatus" role="status"></p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <script src="/admin/admin.js" defer></script>
+</body>
+</html>

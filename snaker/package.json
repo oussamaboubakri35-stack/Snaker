@@ -1,0 +1,15 @@
+{
+  "name": "snaker",
+  "version": "1.0.0",
+  "description": "Snaker — portfolio site for design and video editing (frontend + backend + admin panel)",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}

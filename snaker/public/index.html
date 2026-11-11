@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snaker | Designer and video editor</title>
+  <meta name="description" content="Snaker is a graphic designer and video editor. Selected work in video editing, motion graphics, design and branding.">
+  <meta property="og:title" content="Snaker | Designer and video editor">
+  <meta property="og:description" content="Selected work in video editing, motion graphics, design and branding.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#070b13">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/theme.js"></script>
+</head>
+<body class="cosmic">
+  <a class="skip" href="#work">Skip to work</a>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav__in">
+      <a class="brand" href="#top" aria-label="Snaker, back to top">
+        <svg class="brand__mark" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 7.5c-3-2.6-11-2-11 4.5s10 3.5 10 9.5-8 7.5-12 4.5"/>
+          <circle cx="23.5" cy="8" r="1.5" fill="currentColor" stroke="none"/>
+        </svg>
+        <span>Snaker</span>
+      </a>
+      <nav class="nav__links" id="menu" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch between light and dark mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>
+        </button>
+        <a class="btn btn--sm" href="#contact">Hire me</a>
+        <button class="icon-btn nav__burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <p class="status" id="status"><span class="status__dot" aria-hidden="true"></span><span id="statusText">Available for new projects</span></p>
+        <h1 class="hero__title" id="heroTitle">I design and edit stories that move.</h1>
+        <div class="hero__row">
+          <p class="hero__sub" id="heroSub">Graphic designer and video editor. Clean visuals, sharp cuts and motion that sticks.</p>
+          <div class="hero__cta">
+            <a class="btn" href="#work">See the work</a>
+            <a class="btn btn--ghost" href="#contact">Start a project</a>
+          </div>
+        </div>
+      </div>
+      <div class="snake" aria-hidden="true">
+        <svg viewBox="0 0 1440 160" preserveAspectRatio="xMidYMid slice">
+          <path pathLength="1" d="M-10 92C120 -12 240 -12 360 80S600 172 720 80 960 -12 1080 80s240 92 370-12"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="block" id="work">
+      <div class="wrap">
+        <div class="head">
+          <h2>Work</h2>
+          <p class="head__note" id="workCount"></p>
+        </div>
+        <div class="filters" id="filters" role="group" aria-label="Filter projects by type"></div>
+        <div class="grid" id="grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="block block--ruled" id="services">
+      <div class="wrap">
+        <div class="head"><h2>Services</h2></div>
+        <div class="rows">
+          <div class="row">
+            <h3>Video editing</h3>
+            <p>Interviews, ads, reels, YouTube and short-form. Story-first cuts, clean sound, color that matches your brand.</p>
+          </div>
+          <div class="row">
+            <h3>Motion graphics</h3>
+            <p>Titles, lower thirds, logo animations and social loops, built to sit cleanly on top of your footage.</p>
+          </div>
+          <div class="row">
+            <h3>Graphic design</h3>
+            <p>Posters, thumbnails, social kits and layouts with strong hierarchy and no clutter.</p>
+          </div>
+          <div class="row">
+            <h3>Branding</h3>
+            <p>Logos and visual systems that stay consistent from a business card to a video outro.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block block--ruled" id="about">
+      <div class="wrap split">
+        <h2 class="title">About</h2>
+        <div>
+          <div class="prose" id="aboutText"></div>
+          <p class="tools-title" id="toolsTitle" hidden>Tools I work in</p>
+          <ul class="tools" id="tools"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="block block--ruled" id="contact">
+      <div class="wrap split">
+        <div>
+          <h2 class="title title--spaced">Start a project</h2>
+          <p class="contact-note">Tell me what you are making, when you need it and where it will be seen. I reply within a couple of days.</p>
+          <ul class="contact-links" id="contactLinks"></ul>
+        </div>
+        <form class="form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="cName">Your name</label>
+            <input id="cName" name="name" autocomplete="name" maxlength="80" required>
+          </div>
+          <div class="field">
+            <label for="cEmail">Email</label>
+            <input id="cEmail" name="email" type="email" autocomplete="email" maxlength="120" required>
+          </div>
+          <div class="field">
+            <label for="cMsg">About the project</label>
+            <textarea id="cMsg" name="message" maxlength="3000" required></textarea>
+          </div>
+          <div class="hp" aria-hidden="true">
+            <label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <div>
+            <button class="btn" type="submit" id="cBtn">Send message</button>
+          </div>
+          <p class="form__status" id="cStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <p>© <span id="year"></span> <span id="footName">Snaker</span></p>
+      <ul class="foot__links" id="footLinks"></ul>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <dialog class="viewer" id="viewer" aria-labelledby="vTitle">
+    <button class="icon-btn viewer__close" id="vClose" type="button" aria-label="Close project">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="viewer__media" id="vMedia"></div>
+    <div class="viewer__body">
+      <p class="viewer__meta" id="vMeta"></p>
+      <h3 id="vTitle"></h3>
+      <p class="viewer__desc" id="vDesc"></p>
+      <ul class="tags" id="vTags"></ul>
+    </div>
+  </dialog>
+
+  <script src="/js/app.js" defer></script>
+</body>
+</html>

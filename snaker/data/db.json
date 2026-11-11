@@ -1,0 +1,86 @@
+{
+  "profile": {
+    "name": "Snaker",
+    "headline": "I design and edit stories that move.",
+    "subheadline": "Graphic designer and video editor. Clean visuals, sharp cuts and motion that sticks.",
+    "about": "I’m Snaker — a designer and video editor who cares about the details people feel but rarely notice: spacing, rhythm, timing, contrast.\n\nFrom brand identities and social content to full video edits and motion graphics, I build work that’s clear, modern and made to be remembered. Edit this text from the admin panel.",
+    "email": "",
+    "location": "",
+    "availability": "Available for new projects",
+    "tools": [
+      "Photoshop",
+      "Illustrator",
+      "Premiere Pro",
+      "After Effects",
+      "DaVinci Resolve",
+      "Figma"
+    ],
+    "socials": []
+  },
+  "projects": [
+    {
+      "id": "aa6a28488152",
+      "title": "Sample: Brand launch film",
+      "category": "video",
+      "year": 2026,
+      "description": "This is a placeholder. Upload a cover and your video (or paste a YouTube / Vimeo link) from the admin panel, then delete this sample.",
+      "tags": [
+        "Editing",
+        "Color"
+      ],
+      "cover": "",
+      "video": "",
+      "embed": "",
+      "sample": true,
+      "createdAt": "2026-11-10T23:18:02.968Z"
+    },
+    {
+      "id": "d8c72b3ee885",
+      "title": "Sample: Identity system",
+      "category": "branding",
+      "year": 2026,
+      "description": "This is a placeholder. Replace it with a real branding project.",
+      "tags": [
+        "Logo",
+        "Guidelines"
+      ],
+      "cover": "",
+      "video": "",
+      "embed": "",
+      "sample": true,
+      "createdAt": "2026-11-10T23:18:01.968Z"
+    },
+    {
+      "id": "fcb7ce3322a0",
+      "title": "Sample: Social motion pack",
+      "category": "motion",
+      "year": 2026,
+      "description": "This is a placeholder. Replace it with a real motion project.",
+      "tags": [
+        "After Effects"
+      ],
+      "cover": "",
+      "video": "",
+      "embed": "",
+      "sample": true,
+      "createdAt": "2026-11-10T23:18:00.968Z"
+    },
+    {
+      "id": "d9e7f589871b",
+      "title": "Sample: Poster series",
+      "category": "design",
+      "year": 2026,
+      "description": "This is a placeholder. Replace it with a real design project.",
+      "tags": [
+        "Poster",
+        "Typography"
+      ],
+      "cover": "",
+      "video": "",
+      "embed": "",
+      "sample": true,
+      "createdAt": "2026-11-10T23:17:59.968Z"
+    }
+  ],
+  "messages": []
+}

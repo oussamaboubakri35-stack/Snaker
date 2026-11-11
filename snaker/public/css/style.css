@@ -68,7 +68,7 @@ h1, h2, h3 { margin: 0; font-weight: 700; line-height: 1.02; }
 .nav__in { display: flex; align-items: center; justify-content: space-between; height: 4rem; gap: 1.5rem; }
 
 .brand { display: inline-flex; align-items: center; gap: .55rem; font-weight: 800; font-size: 1.3rem; letter-spacing: -.04em; }
-.brand__mark { width: 1.6rem; height: 1.6rem; color: var(--accent); }
+.brand__mark { width: 1.75rem; height: 2.2rem; object-fit: contain; color: var(--accent); filter: brightness(1.7); }
 
 .nav__links { display: flex; gap: 2rem; margin-left: auto; font-weight: 500; font-size: .98rem; }
 .nav__links a { color: var(--muted); transition: color .15s; }
@@ -366,7 +366,7 @@ body.cosmic::after {
   box-shadow: 0 14px 48px rgba(30, 72, 88, .12), inset 0 1px 0 rgba(255, 255, 255, .9);
 }
 
-.cosmic .brand__mark { color: var(--accent); filter: drop-shadow(0 0 9px rgba(101, 230, 223, .48)); }
+.cosmic .brand__mark { color: var(--accent); filter: brightness(1.7) drop-shadow(0 0 9px rgba(101, 230, 223, .48)); }
 .cosmic .nav__links { margin-inline: auto; }
 .cosmic .nav__links a { transition: color .2s ease, text-shadow .2s ease; }
 .cosmic .nav__links a:hover { color: var(--ink); text-shadow: 0 0 16px rgba(101, 230, 223, .48); }
